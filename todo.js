@@ -1,8 +1,8 @@
 var todoapp = {
   newTask: function() {
   //get input, append to task list
-    var value = $('item').val();
-    $('topitem').append('<li>' + value + '</li>');
+    var value = $('ul.todoList li').val();
+    $('newitem').append('<li>' + value + '</li>');
     
       },
   toggleStatusTask: function(){

@@ -57,7 +57,7 @@ h1 {
 	
 }
 
-.item>input {
+ul.item>input {
 	display:inline-block;
 	float:left;
 	height: 44px;
@@ -68,6 +68,7 @@ h1 {
 	padding-left:1px;
 	width: 70%;
 	text-indent:4px;
+    list-style:none;
 	
 	
 }

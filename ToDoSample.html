@@ -4,7 +4,9 @@
 	
 	<title>Sample ToDo List</title>
 <link rel="stylesheet" type="text/css" href="todo.css">
-	
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src = "./dist/js/bootstrap.js"></script>
+      <script src = "./todo.js"></script>	
 	</head>
 <body>
 	<div class='title'>
@@ -14,13 +16,17 @@
 <div class='notebook'>
 	<div class='todolist'>
 	
-	<div class='topitem'>
-		<div class='check'><img src="checkmark-lt.jpg" alt="check mark"></div><div class='item'><input type="text" placeholder="What needs to be done?"></div>
+	<section id = 'main'>
+      <div class='topitem'>
+        <ul class = 'todoList'>
+          <li class = 'newTask'>
+		<div class='check'><img src="checkmark-lt.jpg" alt="check mark"></div><div class='item'><input type="text" placeholder="What needs to be done?"></div></li>
+          </ul>
 		</div>
-	<div class='topitem'>
-		<div class='check'><img src="checkmark-lt.jpg" alt="check mark"></div><div class='item'><input type="" placeholder="type your text here"></div>
-		</div>
-
+<!--	<div class='topitem'>
+		<div class='check'><img src="checkmark-lt.jpg" alt="check mark"></div><div class='item'><input type="" placeholder="type your text here"></div> -->
+		
+</section>
 	
 	</div>
 	</div>

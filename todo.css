@@ -34,11 +34,13 @@ h1 {
 	
 }
 
-	
+.todoItem{
+   white-space: nowrap;
+}	
 	
 
 .topitem {
-	height: 50px;
+	height: 55px;
 	text-align:center;
 	border-bottom: 1px solid #000;
 	vertical-align:text-bottom;
@@ -48,7 +50,6 @@ h1 {
 .check {
 
 	display: inline-block;
-	float:left;
 	width: 15%;
 	height: 50px;  
 	border-right: 6px double red;
@@ -57,13 +58,26 @@ h1 {
 	
 }
 
-ul.item>input {
+ul {
+    height: 55px;
+    font-size: 1.4em;
+	padding-left:1px;
+	width:95%;
+	text-indent:4px;
+    list-style-type:none;
+	 
+}
+.item {
 	display:inline-block;
-	float:left;
+    width: 83%;
+ 
+
+}
+.item>input {
+	display:inline-block;
 	height: 44px;
 	font-weight:bold;
 	font-style:italic;
-	color: #ccc;
 	font-size: 1.4em;
 	padding-left:1px;
 	width: 70%;

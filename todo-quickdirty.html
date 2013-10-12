@@ -1,0 +1,33 @@
+<html>
+<head>
+  <link rel="stylesheet" href="todo1.css" />
+
+  </head>
+<body>
+  <div class = "container">
+  <input class = "new-todo wide" type="text" placeholder="Stuff to do...">
+    <div class = "todo-list">
+    </div>
+  <div class = "remaining">0 remaining</div>
+    <div>
+    <a href='#' class="show-all">All</a>
+    <a href='#' class = "show-active">Active</a>
+    <a href='#' class  = "show-complete">Complete</a>
+    </div>
+  <div class="templates hide">
+    Templates!
+  <div class = "todo-item wide">
+      <span class = "toggle">&gt;</span>
+        <label>to do</label>
+      </div>
+    </div>
+    </div>
+  <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+    <script src="todo1.js"></script>
+    <script>
+      $(document).ready(function() {
+        app.init();
+      })
+    </script>  
+  </body>
+</html>

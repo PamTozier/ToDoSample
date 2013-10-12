@@ -7,6 +7,9 @@
  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
       <script src = "./dist/js/bootstrap.js"></script>
       <script src = "./todo.js"></script>	
+    <script>$(document).ready(function() {
+     todoapp.init();
+  });</script>
 	</head>
 <body>
 	<div class='title'>
@@ -15,23 +18,20 @@
 	</div>
 <div class='notebook'>
 	<div class='todolist'>
-	
-	<section id = 'main'>
-      <div class='topitem'>
-        <ul class = 'todoList'>
-          <li class = 'newitem'>
-		<div class='check'><img src="checkmark-lt.jpg" alt="check mark"></div><div class='item'><input type="text" placeholder="What needs to be done?"></div></li>
-          </ul>
-		</div>
-<!--	<div class='topitem'>
-		<div class='check'><img src="checkmark-lt.jpg" alt="check mark"></div><div class='item'><input type="" placeholder="type your text here"></div> -->
-		
-</section>
-	
-	</div>
-	</div>
+	    <div class = 'todoItem'>
+        
+		  <div class='check'><img src="checkmark-lt.jpg" alt="check mark"></div>
+          <div class='item'><input type="text" placeholder="What needs to be done?"></div>
+        
+        </div>
+   </div>
+</div>
 	<div class='footer'>
-		<div class='status'><span class="itemsleft" id='itemcount'></span><strong>0</strong> items left <span class="all" id='showall'>All</span><span class='active' id='showactive'>Active</span><span class='completed' id='showcomplete'>Completed</span></div>
+		<div class='status'>
+          <span class="itemsleft">0</span> items left 
+          <span class="all" id='showall'>All</span>
+          <span class='active' id='showactive'>Active</span>
+          <span class='completed' id='showcomplete'>Completed</span></div>
 </div>
 	<div>
 				<p id="info">Double-click to edit a todo</p>

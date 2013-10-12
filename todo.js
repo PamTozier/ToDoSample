@@ -1,17 +1,22 @@
 var todoapp = {
   init: function()  {
-    $('.todolist .todoItem:first-child input').change(todoapp.newTask);  
+    $('.todolist .todoItem:first-child input').keypress(todoapp.newTask);  
   },
   
-  newTask: function() {
+  newTask: function(ev) {
     
   //get input, append to task list
+    if(ev.which === 13) {
     var input = $(this);
     var clonedItem = input.parent().parent().clone();
     $('.todolist').append(clonedItem);
-    input.val('');
+    input.val(''); }; 
+    $(clonedItem).find('.item input').attr('readonly', true);
+    
     todoapp.updateCount();
+    //todoapp.beginEditTask(ev);
   },
+  
   toggleStatusTask: function(ev){
     //change complete or active
     
@@ -19,9 +24,13 @@ var todoapp = {
   toggleAll: function(){
     //top level change status for all
   },
-  beginEditTask: function(){
+  beginEditTask: function(ev){
+  //$(ev.target).ondblclick('input').removeAttr('readonly');
     //double click to edit items
+//    $('input').ondblclick(this:'readonly', false);
   },
+  
+  
   endEditTask: function(){
     //commit edits to double clicked item
   },

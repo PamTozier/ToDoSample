@@ -15,12 +15,7 @@ display: none;
   border: 1px solid #eee;
   margin-top: 5px;
 }
-.todoitem.check>input {
-  border: 1px dashed #f0f;
-  width: 15px;
-  height: 15px;
-  
-}
+
 .todo-item span, 
 .todo-item label {
   margin: 10px 5px;

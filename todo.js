@@ -1,8 +1,8 @@
 var todoapp = {
   init: function()  {
     $('.todolist .todoItem:first-child input').keypress(todoapp.newTask);  
-    $('.todolist').on('dblclick', '.item input', todoapp.beginEditTask);
-  $('.todolist .todoItem').on('mouseleave', todoapp.endEditTask);  
+    $('.todolistitem').on('dblclick', '.item input', todoapp.beginEditTask);
+  $('.todolistitem').on('mouseleave', todoapp.endEditTask);  
   
   },
   newTask: function(ev) {
@@ -14,7 +14,9 @@ var todoapp = {
     var clonedItem = input.parent().parent().clone();
     
       //console.log(clonedItem);  
-      
+    $(clonedItem)
+      .removeClass('todoItem')
+      .addClass('todolistitem');
     $('.todolist').append(clonedItem);
     input.val(''); }; 
     $(clonedItem).find('.item input').attr('readonly', true).attr('placeholder', (''));
@@ -31,7 +33,7 @@ var todoapp = {
     //top level change status for all
   },
   beginEditTask: function(ev){
-  $(ev.currentTarget).removeAttr('readonly');
+  $(ev.target).removeAttr('readonly');
     
     //double click to edit items
 //    $('input').ondblclick(this:'readonly', false);
@@ -54,7 +56,7 @@ var todoapp = {
 },
   updateCount: function() {
   //show numver of items
-    var Count = $('.todolist .todoItem').length - 1;
+    var Count = $('.todolistitem').length;
     $('.itemsleft').text(Count);
     
   }

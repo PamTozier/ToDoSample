@@ -86,6 +86,14 @@ ul {
 	
 	
 }
+div.check>input {
+  background-color:#f0f;
+  border: 3px solid #f0f;
+  width: 30px;
+  height: 30px;
+  text-decoration-color:#f0f;
+  
+}
 
 .footer {
 	display:block;

@@ -2,7 +2,7 @@ var todoapp = {
   init: function()  {
     $('.todolist .todoItem:first-child input').keypress(todoapp.newTask);  
     $('.todolist').on('dblclick', '.item input', todoapp.beginEditTask);
-  $('.todolist').on('mouseleave', todoapp.endEditTask);  
+  $('.todolist .todoItem').on('mouseleave', todoapp.endEditTask);  
   
   },
   newTask: function(ev) {

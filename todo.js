@@ -2,7 +2,7 @@ var todoapp = {
   init: function()  {
     $('.todolist .todoItem:first-child input').keypress(todoapp.newTask);  
     $('.todolist').on('dblclick', '.item input', todoapp.beginEditTask);
-  $('.todolist').on('mouseLeave',todoapp.endEditTask);  
+  $('.todolist').on('mouseleave', todoapp.endEditTask);  
   
   },
   newTask: function(ev) {
@@ -13,7 +13,7 @@ var todoapp = {
       
     var clonedItem = input.parent().parent().clone();
     
-      console.log(clonedItem);  
+      //console.log(clonedItem);  
       
     $('.todolist').append(clonedItem);
     input.val(''); }; 
@@ -40,7 +40,7 @@ var todoapp = {
   
   endEditTask: function(){
     //commit edits to double clicked item
-    $('this  .item input').attr('readonly' , true);
+    $('.item input').attr('readonly', true);
   },
   deleteTask: function(){
     //x button to delete the item completely

@@ -2,7 +2,9 @@ var todoapp = {
   init: function()  {
     $('.todolist .todoItem:first-child input').keypress(todoapp.newTask);  
     $('.todolist').on('dblclick', '.item input', todoapp.beginEditTask);
-    },
+  $('.todolist').on('mouseLeave',todoapp.endEditTask);  
+  
+  },
   newTask: function(ev) {
     
   //get input, append to task list
@@ -15,7 +17,7 @@ var todoapp = {
       
     $('.todolist').append(clonedItem);
     input.val(''); }; 
-    $(clonedItem).find('.item input').attr('readonly', true);
+    $(clonedItem).find('.item input').attr('readonly', true).attr('placeholder', (''));
     
     todoapp.updateCount();
     //todoapp.beginEditTask(ev);
@@ -30,6 +32,7 @@ var todoapp = {
   },
   beginEditTask: function(ev){
   $(ev.currentTarget).removeAttr('readonly');
+    
     //double click to edit items
 //    $('input').ondblclick(this:'readonly', false);
   },
@@ -37,6 +40,7 @@ var todoapp = {
   
   endEditTask: function(){
     //commit edits to double clicked item
+    $('this  .item input').attr('readonly' , true);
   },
   deleteTask: function(){
     //x button to delete the item completely

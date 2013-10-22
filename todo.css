@@ -61,7 +61,7 @@ h1 {
 .delete {
 	display: inline-block;
 	width: 30px;
-	height: 43px;  
+	height: 1.1em;  
 	text-align:center;
 }
 ul {

@@ -2,9 +2,9 @@ var todoapp = {
   init: function()  {
     $('.todolist .todoItem:first-child input').keypress(todoapp.newTask);  
     $('.todolistitem').on('dblclick', '.item input', todoapp.beginEditTask);
-    $('todolistitem').onchange('checkbox', '.item input', todoapp.toggleStatusTask());
+    $('.todolistitem .check').change(todoapp.toggleStatusTask());
                                
- // $('.todolistitem').on('mouseleave', todoapp.endEditTask);  
+ $('.todolistitem').on('mouseleave', todoapp.endEditTask);  
   
   },
   newTask: function(ev) {
@@ -19,37 +19,43 @@ var todoapp = {
     $(clonedItem)
       .removeClass('todoItem')
       .addClass('todolistitem')
+    
     $('.todolist').append(clonedItem);
     input.val(''); }; 
+    
     $(clonedItem).find('.item input')
     .attr('readonly', true)
-    .removeAttr('placeholder')
+    .removeAttr('placeholder');
+    
     $('.todolistitem .btn').show();
     
     todoapp.updateCount();
     //todoapp.beginEditTask(ev);
   },
   
+   beginEditTask: function(ev){
+  $(ev.target).removeAttr('readonly');
+    
+    //double click to edit items
+//    $('input').ondblclick(this:'readonly', false);
+  }, 
   toggleStatusTask: function(ev){
     //change complete or active
-      if(ev.which === '.check') {
-        var complete = event.clonedItem;
+    var complete = $('.todolistitem .check checkbox');  
+    if(complete === true) {
+        
         $('.check checkbox')
         .onchange('.item input')
         .removeClass('.item')
         .addClass('.noitem');
+      
         
   }
   },
   toggleAll: function(){
     //top level change status for all
   },
-  beginEditTask: function(ev){
-  $(ev.target).removeAttr('readonly');
-    
-    //double click to edit items
-//    $('input').ondblclick(this:'readonly', false);
-  },
+
   
   
   endEditTask: function(){

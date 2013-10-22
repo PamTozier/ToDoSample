@@ -36,6 +36,7 @@ h1 {
 
 .todoItem{
    white-space: nowrap;
+  
 }	
 	
 
@@ -90,6 +91,17 @@ ul {
     list-style-type:none;
 	
 	
+}
+.noitem>input {
+	display:inline-block;
+	height: 44px;
+	font-weight:lighter;
+	text-decoration:line-through;
+	font-size: 1.4em;
+	padding-left:1px;
+	width: 95%;
+	text-indent:4px;
+    list-style-type:none;
 }
 div.check>input {
   background-color:#f0f;

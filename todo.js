@@ -2,6 +2,8 @@ var todoapp = {
   init: function()  {
     $('.todolist .todoItem:first-child input').keypress(todoapp.newTask);  
     $('.todolistitem').on('dblclick', '.item input', todoapp.beginEditTask);
+    $('todolistitem').onchange('checkbox', '.item input', todoapp.toggleStatusTask());
+                               
  // $('.todolistitem').on('mouseleave', todoapp.endEditTask);  
   
   },
@@ -19,7 +21,10 @@ var todoapp = {
       .addClass('todolistitem')
     $('.todolist').append(clonedItem);
     input.val(''); }; 
-    $(clonedItem).find('.item input').attr('readonly', true).removeAttr('placeholder');
+    $(clonedItem).find('.item input')
+    .attr('readonly', true)
+    .removeAttr('placeholder')
+    $('.todolistitem .btn').show();
     
     todoapp.updateCount();
     //todoapp.beginEditTask(ev);
@@ -27,7 +32,14 @@ var todoapp = {
   
   toggleStatusTask: function(ev){
     //change complete or active
-    
+      if(ev.which === '.check') {
+        var complete = event.clonedItem;
+        $('.check checkbox')
+        .onchange('.item input')
+        .removeClass('.item')
+        .addClass('.noitem');
+        
+  }
   },
   toggleAll: function(){
     //top level change status for all

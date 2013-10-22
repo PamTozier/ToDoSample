@@ -2,7 +2,7 @@ var todoapp = {
   init: function()  {
     $('.todolist .todoItem:first-child input').keypress(todoapp.newTask);  
     $('.todolistitem').on('dblclick', '.item input', todoapp.beginEditTask);
-    $('.todolistitem .check').change(todoapp.toggleStatusTask());
+    $(todoapp.toggleStatusTask);
                                
  $('.todolistitem').on('mouseleave', todoapp.endEditTask);  
   
@@ -41,19 +41,24 @@ var todoapp = {
   }, 
   toggleStatusTask: function(ev){
     //change complete or active
-    var complete = $('.todolistitem .check checkbox');  
+    $(ev.target).closest('checkbox')
+      .removeClass('item')
+      .addClass('noitem');
+    todoapp.updateCount;
+/*    var complete = $('.todolistitem .check checkbox');  
     if(complete === true) {
         
         $('.check checkbox')
         .onchange('.item input')
         .removeClass('.item')
         .addClass('.noitem');
-      
+      */
         
-  }
+  
   },
   toggleAll: function(){
     //top level change status for all
+    
   },
 
   
@@ -74,7 +79,7 @@ var todoapp = {
 },
   updateCount: function() {
   //show numver of items
-    var Count = $('.todolistitem').length;
+    var Count = $('.todolistitem').length-($('.todolistitem .noitem').length);
     $('.itemsleft').text(Count);
     
   }

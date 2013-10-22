@@ -2,7 +2,7 @@ var todoapp = {
   init: function()  {
     $('.todolist .todoItem:first-child input').keypress(todoapp.newTask);  
     $('.todolistitem').on('dblclick', '.item input', todoapp.beginEditTask);
-  $('.todolistitem').on('mouseleave', todoapp.endEditTask);  
+ // $('.todolistitem').on('mouseleave', todoapp.endEditTask);  
   
   },
   newTask: function(ev) {
@@ -16,10 +16,10 @@ var todoapp = {
       //console.log(clonedItem);  
     $(clonedItem)
       .removeClass('todoItem')
-      .addClass('todolistitem');
+      .addClass('todolistitem')
     $('.todolist').append(clonedItem);
     input.val(''); }; 
-    $(clonedItem).find('.item input').attr('readonly', true).attr('placeholder', (''));
+    $(clonedItem).find('.item input').attr('readonly', true).removeAttr('placeholder');
     
     todoapp.updateCount();
     //todoapp.beginEditTask(ev);
